@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pickers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +21,37 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3A-wk-rhW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="4vn-3L-Wam"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="96E-0o-2QE"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sM-mT-DOY">
+                                <rect key="frame" x="0.0" y="252" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="auC-Zz-k5o"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Tcs-ow-Gck"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5sM-mT-DOY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="3sq-Uj-ADA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m3A-wk-rhW" secondAttribute="trailing" constant="-16" id="7CJ-0y-itx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5sM-mT-DOY" secondAttribute="trailing" constant="-16" id="G7h-Be-z3r"/>
+                            <constraint firstItem="5sM-mT-DOY" firstAttribute="top" secondItem="m3A-wk-rhW" secondAttribute="bottom" constant="8" id="kYQ-4F-iEe"/>
+                            <constraint firstItem="m3A-wk-rhW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="pgM-Ql-RqF"/>
+                            <constraint firstItem="m3A-wk-rhW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qEL-EM-vLh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5sM-mT-DOY" secondAttribute="bottom" constant="199" id="wDi-g0-hF5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barPickerView" destination="5sM-mT-DOY" id="oYg-uh-zTj"/>
+                        <outlet property="fooPickerView" destination="m3A-wk-rhW" id="MR3-Yp-tDx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
